@@ -12,7 +12,9 @@
   <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
 
   <!-- Use this element to render your menu -->
-  <ul id="menu"></ul>
+  <ul id="menu">
+
+  </ul>
 
   <script>
     const menu = [
@@ -34,7 +36,13 @@
       }
     ]
     // Write your code here
-
+      let vegetarianMenu = menu.filter(menuItem => menuItem.isVegetarian == true );
+      let menuMain = document.getElementById("menu");
+      vegetarianMenu.forEach(element => {
+        let li = document.createElement('li');
+        li.textContent = element.name;
+        menuMain.appendChild(li);
+      });
   </script>
 </body>
 
